@@ -1,0 +1,59 @@
+/* additional colors to use #A8DADC (seafoam blue) and #E63946 (red) */
+
+/* header styling */
+
+
+/* body styling */
+
+.column {
+  align-items: center;
+  border: .25em solid black;
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+}
+
+.container--center-column {
+  background-color: #457B9D;
+  /* border: .5em solid black; */
+  width: 60vw;
+}
+
+.container--outer-column {
+  background-color: #1D3557;
+  width: 20vw;
+}
+
+.container--whole-page {
+  /* border: .5em solid black; */
+  color: #F1FAEE;
+  display: flex;
+  font-family: Haettenschweiler, sans-serif;
+  flex-direction: row;  
+  white-space: nowrap;
+  width: 98vw;
+}
+
+h1 {
+  font-family: 'Monofett';
+  font-size: 10vh;
+  margin-bottom: 5%;
+  display:inline-flex
+}
+
+h2 {
+  font-size: 5vh;
+  margin: 0% auto
+}
+
+p {
+  font-size: 3vh;
+}
+
+/* .player-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+} */
+
+
