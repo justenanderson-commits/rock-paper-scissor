@@ -4,26 +4,6 @@
 
 
 /* body styling */
-
-.column {
-  align-items: center;
-  border: .25em solid black;
-  display: flex;
-  flex-direction: column;
-  height: 98vh;
-}
-
-.container--center-column {
-  background-color: #457B9D;
-  /* border: .5em solid black; */
-  width: 60vw;
-}
-
-.container--outer-column {
-  background-color: #1D3557;
-  width: 20vw;
-}
-
 .container--whole-page {
   /* border: .5em solid black; */
   color: #F1FAEE;
@@ -33,6 +13,56 @@
   white-space: nowrap;
   width: 98vw;
 }
+
+.column {
+  align-items: center;
+  border: .25em solid black;
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+}
+
+.container--outer-column {
+  background-color: #1D3557;
+  width: 20vw;
+}
+
+.container--center-column {
+  background-color: #457B9D;
+  /* border: .5em solid black; */
+  width: 60vw;
+}
+
+ .container--game-play-area {
+  /* border: black 2px solid; */
+  background-color: #457B9D;
+  display: flex;
+  /* justify-items: flex-end; */
+  height: 70vh;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  
+}
+
+/* .container--game-cards {
+  border: 5px black solid;
+  display: flex-block;
+  align-content: space-around;
+  justify-content: center;
+} */
+
+.card--game-selector {
+  background-color: #A8DADC;
+  border: 25px #457B9D solid;
+  color: #F1FAEE;
+  display: flex;
+  height: 25vh;
+  width: 25vh;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 h1 {
   font-family: 'Monofett';
