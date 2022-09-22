@@ -1,13 +1,5 @@
 // Global variables -------------------------------------
-// var personWinCount = humanPlayer.wins;
-// var computerWinCount = computerPlayer.wins;
-var rockPower;
-var paperPower;
-var scissorPower;
-
-
-// winCounter = [personWinCount, computerWinCount]
-var fighterArray = [] // links to svgs, probably have to make an array of objects here.// ]
+var fighterArray = []
 
 //  Query Selectors ---------------------------------------
 var classicGameCard = document.getElementById('card--game-classic');
@@ -56,19 +48,13 @@ function showStartScreen() {
   spicyFighterArea.remove()
   hide(classicFighterArea)
   hide(spicyFighterArea)
-  show(classicGameCard)
-  show(spicyGameCard)
+  gamePlayArea.appendChild(gameCardArea)
   hide(changeGameCard)
 }
 
-// function toggleGamePlayArea() {
-//   hide(gamePlayArea)
-//   show(classicFighterArea)
-// }
-
 //  Add headerInstructions.innerText = '💻 Computer won this round! 💻'
 //  Add headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-//  Add headerInstructions.innerText = '✍️ It's a draw! ✍️'
+//  Add headerInstructions.innerText = 
 
 
 // Problem solving process --------------------------------
