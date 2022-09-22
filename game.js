@@ -10,14 +10,16 @@ class Game {
   }
 }
 
+// 
 
-function compareScores(humanPlayer, computerPlayer) {
-  if (humanPlayer.score > computerPlayer.score) {
-    humanPlayer.wins++
-  } else {
-    computerPlayer.wins++
-  }              
-}
+
+// if (human.fighter === 'rock' && computer.fighter === 'scissor') {
+//   headerInstructions.innerText = '💻 Computer won this round! 💻'
+//   computer.wins++
+// } else if (human.fighter === 'rock' && computer.fighter === 'paper') {
+//   headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+//   human.wins++
+// }
 
 
 // // Game should include:
@@ -27,3 +29,13 @@ function compareScores(humanPlayer, computerPlayer) {
 // // A way to check the Game’s board data for win conditions
 // // A way to detect when a game is a draw (no one has won)
 // // A way to reset the Game’s board to begin a new game
+
+
+// this is dumb:
+// function compareScores(humanPlayer, computerPlayer) {
+//   if (humanPlayer.score > computerPlayer.score) {
+//     humanPlayer.wins++
+//   } else {
+//     computerPlayer.wins++
+//   }              
+// }

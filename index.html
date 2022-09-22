@@ -11,26 +11,35 @@
 
 <body>
   <div class="container--whole-page">
+
+
     <section class="column container--outer-column">
-      <!--The three following elements may be replaced by object instantiation  -->
       <h1>🧟‍♂️</h1>
       <h2>Human</h2>
+      <!--The blank in this element may be replaced by interpolating `${computer.wins}` -->
       <p>Wins: ____</p>
       <div class="card--game-selector card--change-game" id="change-game-selector">
         <p>Change game?</p>
       </div>
     </section>
+
+
     <section class="column container--center-column">
       <h1>Rock Paper Scissor</h1>
       <h2 id="text--instructions">Choose your game!</h2>
-      <div class="container--game-play-area">
-        <container class="container--game-cards">
+      <div class="container--game-play-area" id="container--game-play-area">
+
+
+        <!-- game cards container -->
+        <container class="container--game-cards" id="container--game-cards">
           <section class="card--game-selector" id="card--game-classic">
             <h3>Classic Game</h3>
             <p>rock > scissors</p>
             <p>paper > rock</p>
             <p>scissors > paper</p>
           </section>
+
+
           <section class="card--game-selector card--game-spicy" id="card--game-spicy">
             <h3>Spicy Game</h3>
             <p>rock > scissors</p>
@@ -40,21 +49,35 @@
             <p>scissors > paper</p>
           </section>
         </container>
-        <container class="container--fighter-images" id="container--fighter-area">
-          <!-- the same as the container above, execpt with three images loaded on-screen -->
+
+        <!-- classic fighter images container -->
+        <container class="container--fighter-images" id="container--classic-fighter-area">
           <img src="assets/rock.png" alt="Rock clip art">
           <img src="assets/lines-paper.png" alt="Lined paper clip art">
           <img src="assets/lines-scissors.png" alt="Scissor clip art">
         </container>
+
+        <!-- classic fighter images container -->
+        <container class="container--fighter-images" id="container--spicy-fighter-area">
+          <img src="assets/rock.png" alt="Rock clip art">
+          <img src="assets/lines-paper.png" alt="Lined paper clip art">
+          <img src="assets/lines-scissors.png" alt="Scissor clip art">
+          <img src="assets/ufo.png" alt="Lined paper clip art">
+          <img src="assets/cave.png" alt="Scissor clip art">
+        </container>
       </div>
+
     </section>
     <section class="column container--outer-column">
-      <!--The three following elements may be replaced by object instantiation  -->
       <h1>💻</h1>
       <h2>Computer</h2>
-      <p>Wins: ____</p>
+      <!--The blank in this element may be replaced by interpolating `${computer.wins}` -->
+      <p>Wins: ___ </p>
     </section>
+
   </div>
+
+  <!--The  order of these items should match the order in which they're needed instantiated-->
   <script type="text/javascript" src="main.js"></script>
   <script type="text/javascript" src="game.js"></script>
   <script type="text/javascript" src="player.js"></script>

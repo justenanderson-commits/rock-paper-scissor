@@ -13,6 +13,9 @@ class Player {
 
 
 
+
+// switch statement?
+
 // //  takeTurn function triggered by an event listener. (need QS)
 // //  Each fighter has a unique value that's returned on-click.
 // // Values are compared, winning player determined

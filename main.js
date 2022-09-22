@@ -13,8 +13,11 @@ var fighterArray = [] // links to svgs, probably have to make an array of object
 var classicGameCard = document.getElementById('card--game-classic');
 var spicyGameCard = document.getElementById('card--game-spicy');
 var changeGameCard = document.getElementById('change-game-selector');
-var headerInstructions = document.getElementById('text--instructions')
-var fighterArea = document.getElementById('container--fighter-area')
+var headerInstructions = document.getElementById('text--instructions');
+var classicFighterArea = document.getElementById('container--classic-fighter-area');
+var spicyFighterArea = document.getElementById('container--spicy-fighter-area');
+var gameCardArea = document.getElementById('container--game-cards');
+var gamePlayArea = document.getElementById('container--game-play-area');
 
 // Event listeners ----------------------------------------
 window.addEventListener('load', showStartScreen);
@@ -32,26 +35,36 @@ function hide(element) {
 
 } function loadClassicGame() {
   headerInstructions.innerText = 'Choose your fighter!'
-  hide(classicGameCard)
-  hide(spicyGameCard)
-  hide(changeGameCard)
+  gameCardArea.remove()
+  show(changeGameCard)
+  gamePlayArea.appendChild(classicFighterArea)
+  show(classicFighterArea)
   console.log('Classic game loading...')
 }
 
 function loadSpicyGame() {
   headerInstructions.innerText = 'Choose your fighter!'
-  hide(classicGameCard)
-  hide(spicyGameCard)
-  hide(changeGameCard)
+  gameCardArea.remove()
+  show(changeGameCard)
+  gamePlayArea.appendChild(spicyFighterArea)
+  show(spicyFighterArea)
   console.log('Let\'s get spicy!')
 }
 
 function showStartScreen() {
+  classicFighterArea.remove()
+  spicyFighterArea.remove()
+  hide(classicFighterArea)
+  hide(spicyFighterArea)
   show(classicGameCard)
   show(spicyGameCard)
-// CHANGE to hide once the changeGameCard is fired by the game being run (and winner determined), wins++
-  show(changeGameCard)
+  hide(changeGameCard)
 }
+
+// function toggleGamePlayArea() {
+//   hide(gamePlayArea)
+//   show(classicFighterArea)
+// }
 
 //  Add headerInstructions.innerText = '💻 Computer won this round! 💻'
 //  Add headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
