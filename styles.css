@@ -35,6 +35,13 @@
   align-items: center;
 }
 
+.container--fighter-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
 .card--game-selector {
   background-color: #94b6c3;
   border-bottom: 2em #457B9D solid;
@@ -89,8 +96,8 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items:center;
-  max-width: 30%;
-
+  max-width: 25%;
+  cursor: pointer;
 }
 
 p {
@@ -98,10 +105,3 @@ p {
   margin: 1% auto
 }
 
-.container--fighter-images {
-  display: flex;
-  margin-top: 10%;
-  flex-direction: row;
-  justify-content: space-around;
-  /* add some flex for equal spacing */
-}
