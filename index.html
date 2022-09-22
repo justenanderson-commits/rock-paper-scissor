@@ -16,10 +16,13 @@
       <h1>🧟‍♂️</h1>
       <h2>Human</h2>
       <p>Wins: ____</p>
+      <div class="card--game-selector card--change-game" id="change-game-selector">
+        <p>Change game?</p>
+      </div>
     </section>
     <section class="column container--center-column">
       <h1>Rock Paper Scissor</h1>
-      <h2>Choose your game!</h2>
+      <h2 id="text--instructions">Choose your game!</h2>
       <div class="container--game-play-area">
         <container class="container--game-cards">
           <section class="card--game-selector" id="card--game-classic">
@@ -29,13 +32,19 @@
             <p>scissors > paper</p>
           </section>
           <section class="card--game-selector card--game-spicy" id="card--game-spicy">
-            <h3>Spicy Game</h3>            
+            <h3>Spicy Game</h3>
             <p>rock > scissors</p>
             <p>rock > scissors</p>
             <p>paper > rock</p>
             <p>scissors > paper</p>
             <p>scissors > paper</p>
           </section>
+        </container>
+        <container class="container--fighter-images" id="container--fighter-area">
+          <!-- the same as the container above, execpt with three images loaded on-screen -->
+          <img src="assets/rock.png" alt="Rock clip art">
+          <img src="assets/lines-paper.png" alt="Lined paper clip art">
+          <img src="assets/lines-scissors.png" alt="Scissor clip art">
         </container>
       </div>
     </section>

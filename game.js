@@ -1,10 +1,24 @@
-// class Game {
-//   constructor() {
+class Game {
+  constructor() {
 
-//   }
-// }
+  }
 
-// module.exports = Game;
+  stageFighters() {
+    var humanPlayer = new Player({ name: 'John', token: '🤪' });
+    var computerPlayer = new Player({ name: 'Agent Smith', token: '😎' })
+    fighterArray.push(humanPlayer, computerPlayer);
+  }
+}
+
+
+function compareScores(humanPlayer, computerPlayer) {
+  if (humanPlayer.score > computerPlayer.score) {
+    humanPlayer.wins++
+  } else {
+    computerPlayer.wins++
+  }              
+}
+
 
 // // Game should include:
 // // Two Player instances

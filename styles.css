@@ -1,15 +1,9 @@
-/* additional colors to use #A8DADC (seafoam blue) and #E63946 (red) */
-
-/* header styling */
-
-
 /* body styling */
 .container--whole-page {
-  /* border: .5em solid black; */
   color: #F1FAEE;
   display: flex;
   font-family: Haettenschweiler, sans-serif;
-  flex-direction: row;  
+  flex-direction: row;
   white-space: nowrap;
   width: 98vw;
 }
@@ -29,28 +23,17 @@
 
 .container--center-column {
   background-color: #457B9D;
-  /* border: .5em solid black; */
   width: 60vw;
 }
 
- .container--game-play-area {
-  /* border: black 2px solid; */
+.container--game-play-area {
   background-color: #457B9D;
   display: flex;
-  /* justify-items: flex-end; */
   height: 70vh;
   width: 100%;
   justify-content: center;
-  align-items: flex-end;
-  
+  align-items: center;
 }
-
-/* .container--game-cards {
-  border: 5px black solid;
-  display: flex-block;
-  align-content: space-around;
-  justify-content: center;
-} */
 
 .card--game-selector {
   background-color: #94b6c3;
@@ -69,23 +52,27 @@
 }
 
 .card--game-selector:hover {
-  background-color: #002147;
+  background-color: #092c54;
+  cursor: pointer;
 }
 
-.card--game-spicy {
-  height: 28vh
+.card--change-game {
+  margin-top: 30%;
+  border: 0px;
+  width: 13vw;
+  height: 4.5vh;
 }
 
 h1 {
   font-family: 'Monofett';
   font-size: 10vh;
   margin: 5% auto -0.5%;
-  display: inline-flex; 
+  display: inline-flex;
 }
 
 h2 {
   font-size: 5vh;
-  margin: 0% auto
+  margin: 3% auto 5%
 }
 
 h3 {
@@ -93,13 +80,28 @@ h3 {
   margin: 5% auto
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  max-width: 30%;
+
+}
+
 p {
   font-size: 3vh;
   margin: 1% auto
 }
 
-/* .player-info {
-  align-items: center;
+.container--fighter-images {
   display: flex;
-  flex-direction: column;
-} */
+  margin-top: 10%;
+  flex-direction: row;
+  justify-content: space-around;
+  /* add some flex for equal spacing */
+}
