@@ -4,26 +4,6 @@
 
 
 /* body styling */
-
-.column {
-  align-items: center;
-  border: .25em solid black;
-  display: flex;
-  flex-direction: column;
-  height: 98vh;
-}
-
-.container--center-column {
-  background-color: #457B9D;
-  /* border: .5em solid black; */
-  width: 60vw;
-}
-
-.container--outer-column {
-  background-color: #1D3557;
-  width: 20vw;
-}
-
 .container--whole-page {
   /* border: .5em solid black; */
   color: #F1FAEE;
@@ -34,11 +14,73 @@
   width: 98vw;
 }
 
+.column {
+  align-items: center;
+  border: .25em solid black;
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+}
+
+.container--outer-column {
+  background-color: #1D3557;
+  width: 20vw;
+}
+
+.container--center-column {
+  background-color: #457B9D;
+  /* border: .5em solid black; */
+  width: 60vw;
+}
+
+ .container--game-play-area {
+  /* border: black 2px solid; */
+  background-color: #457B9D;
+  display: flex;
+  /* justify-items: flex-end; */
+  height: 70vh;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  
+}
+
+/* .container--game-cards {
+  border: 5px black solid;
+  display: flex-block;
+  align-content: space-around;
+  justify-content: center;
+} */
+
+.card--game-selector {
+  background-color: #94b6c3;
+  border-bottom: 2em #457B9D solid;
+  color: #F1FAEE;
+  display: flex;
+  height: 20vh;
+  width: 25vh;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1%
+}
+
+.card--game-spicy {
+  height: 28vh
+}
+
+.card--game-selector:hover {
+  background-color: #002147;
+}
+
+.card--game-spicy {
+  height: 28vh
+}
+
 h1 {
   font-family: 'Monofett';
   font-size: 10vh;
-  margin-bottom: 5%;
-  display:inline-flex
+  margin: 5% auto -0.5%;
+  display: inline-flex; 
 }
 
 h2 {
@@ -46,8 +88,14 @@ h2 {
   margin: 0% auto
 }
 
+h3 {
+  font-size: 3vh;
+  margin: 5% auto
+}
+
 p {
   font-size: 3vh;
+  margin: 1% auto
 }
 
 /* .player-info {
