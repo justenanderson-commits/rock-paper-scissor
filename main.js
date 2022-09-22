@@ -4,37 +4,41 @@ var computerWinCount;
 var rockPower;
 var paperPower;
 var scissorPower;
-var itWorked = 'It worked!';
 
 var fighterArray = [] // links to svgs, probably have to make an array of objects here.// ]
 
 //  Query Selectors ---------------------------------------
-var playClassicGame = document.getElementById('card--game-classic');
-var playSpicyGame = document.getElementById('card--game-spicy');
+var classicGameCard = document.getElementById('card--game-classic');
+var spicyGameCard = document.getElementById('card--game-spicy');
 
 
 
 
 // Event listeners ----------------------------------------
-playClassicGame.addEventListener('click', loadClassicGame);
-playSpicyGame.addEventListener('click', loadSpicyGame);
+classicGameCard.addEventListener('click', loadClassicGame);
+spicyGameCard.addEventListener('click', loadSpicyGame);
 
 // Functions (Single Responsibility Protocol)--------------
-function loadClassicGame() {
-  console.log('It worked!')
-}
-
-function loadSpicyGame() {
-  console.log('It worked!')
-}
-
 function show(element) {
   element.classList.remove('hidden');
 }
 
 function hide(element) {
   element.classList.add('hidden')
+
+}function loadClassicGame() {
+  hide(classicGameCard)
+  hide(spicyGameCard)
+  console.log('Classic game loading...')
 }
+
+function loadSpicyGame() {
+  hide(classicGameCard)
+  hide(spicyGameCard)
+  console.log('Let\'s get spicy!')
+}
+
+
 
 // Problem solving process --------------------------------
 // console log everything

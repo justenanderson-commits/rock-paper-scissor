@@ -5,7 +5,6 @@
 
 /* body styling */
 .container--whole-page {
-  /* border: .5em solid black; */
   color: #F1FAEE;
   display: flex;
   font-family: Haettenschweiler, sans-serif;
@@ -45,13 +44,6 @@
   
 }
 
-/* .container--game-cards {
-  border: 5px black solid;
-  display: flex-block;
-  align-content: space-around;
-  justify-content: center;
-} */
-
 .card--game-selector {
   background-color: #94b6c3;
   border-bottom: 2em #457B9D solid;
@@ -69,11 +61,7 @@
 }
 
 .card--game-selector:hover {
-  background-color: #002147;
-}
-
-.card--game-spicy {
-  height: 28vh
+  background-color: #092c54;
 }
 
 h1 {
@@ -91,6 +79,10 @@ h2 {
 h3 {
   font-size: 3vh;
   margin: 5% auto
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 p {
