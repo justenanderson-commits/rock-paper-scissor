@@ -6,40 +6,40 @@ class Game {
   stageFighters() {
     var humanPlayer = new Player({ name: 'Human', token: '🧟‍♂️' });
     var computerPlayer = new Player({ name: 'Computer', token: '💻' })
-    fighterArray.push(humanPlayer, computerPlayer);
+    playerArray.push(humanPlayer, computerPlayer);
   }
-  
+
   // Classic Game Rules:
   // Refactor these. I probably only need 4 rules to meet all possible conditions.
-  determineWinner() {
-    if (humanPlayer.fighter === 'rock' && computerPlayer.fighter === 'scissor') {
-      headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-      humanPlayer.wins++
+  // determineWinner() {
+  //   if (humanPlayer.fighter === 'rock' && computerPlayer.fighter === 'scissor') {
+  //     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+  //     humanPlayer.wins++
 
-    } else if (humanPlayer.fighter === 'paper' && computerPlayer.fighter === 'rock') {
-      headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-      humanPlayer.wins++
+  //   } else if (humanPlayer.fighter === 'paper' && computerPlayer.fighter === 'rock') {
+  //     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+  //     humanPlayer.wins++
 
-    } else if (humanPlayer.fighter === 'scissors' && computerPlayer.fighter === 'paper') {
-      headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-      humanPlayer.wins++
+  //   } else if (humanPlayer.fighter === 'scissors' && computerPlayer.fighter === 'paper') {
+  //     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+  //     humanPlayer.wins++
 
-    } else if (computerPlayer.fighter === 'rock' && humanPlayer.fighter === 'scissor') {
-      headerInstructions.innerText = '💻 Computer won this round! 💻'
-      computerPlayer.wins++
+  //   } else if (computerPlayer.fighter === 'rock' && humanPlayer.fighter === 'scissor') {
+  //     headerInstructions.innerText = '💻 Computer won this round! 💻'
+  //     computerPlayer.wins++
 
-    } else if (computerPlayer.fighter === 'paper' && humanPlayer.fighter === 'rock') {
-      headerInstructions.innerText = '💻 Computer won this round! 💻'
-      computerPlayer.wins++
+  //   } else if (computerPlayer.fighter === 'paper' && humanPlayer.fighter === 'rock') {
+  //     headerInstructions.innerText = '💻 Computer won this round! 💻'
+  //     computerPlayer.wins++
 
-    } else if (computerPlayer.fighter === 'scissors' && humanPlayer.fighter === 'paper') {
-      headerInstructions.innerText = '💻 Computer won this round! 💻'
-      computerPlayer.wins++
+  //   } else if (computerPlayer.fighter === 'scissors' && humanPlayer.fighter === 'paper') {
+  //     headerInstructions.innerText = '💻 Computer won this round! 💻'
+  //     computerPlayer.wins++
 
-    } else {
-      headerInstructions.innerText === '✍️ It\'s a draw! ✍️';
-    }
-  }
+  //   } else {
+  //     headerInstructions.innerText === '✍️ It\'s a draw! ✍️';
+  //   }
+  // }
 }
 
 // // Game should include:

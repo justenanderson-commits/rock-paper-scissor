@@ -1,3 +1,11 @@
+#Bugs
+-Change headerInstructions innerHTML upon loading new page to say choose game.
+-Only allow new players to be pushed to the playerArray if it's empty.
+
+
+
+
+
 ## Rock Paper Scissor Solo Project
 
 ### Abstract
