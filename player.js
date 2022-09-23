@@ -28,36 +28,36 @@ function updateWins() {
   // humanPlayer.fighter and computerPlayer.fighter will then be compared and a winner determined.
 }
 
-function determineWinner() {
-  // this function is a method on the game class.
-  if (humanPlayer.fighter === 'rock' && computerPlayer.fighter === 'scissor') {
-    headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-    humanPlayer.wins++
+// function determineWinner() {
+//   // this function is a method on the game class.
+//   if (humanPlayer.fighter === 'rock' && computerPlayer.fighter === 'scissor') {
+//     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+//     humanPlayer.wins++
 
-  } else if (humanPlayer.fighter === 'paper' && computerPlayer.fighter === 'rock') {
-    headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-    humanPlayer.wins++
+//   } else if (humanPlayer.fighter === 'paper' && computerPlayer.fighter === 'rock') {
+//     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+//     humanPlayer.wins++
 
-  } else if (humanPlayer.fighter === 'scissors' && computerPlayer.fighter === 'paper') {
-    headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-    humanPlayer.wins++
+//   } else if (humanPlayer.fighter === 'scissors' && computerPlayer.fighter === 'paper') {
+//     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+//     humanPlayer.wins++
 
-  } else if (computerPlayer.fighter === 'rock' && humanPlayer.fighter === 'scissor') {
-    headerInstructions.innerText = '💻 Computer won this round! 💻'
-    computerPlayer.wins++
+//   } else if (computerPlayer.fighter === 'rock' && humanPlayer.fighter === 'scissor') {
+//     headerInstructions.innerText = '💻 Computer won this round! 💻'
+//     computerPlayer.wins++
 
-  } else if (computerPlayer.fighter === 'paper' && humanPlayer.fighter === 'rock') {
-    headerInstructions.innerText = '💻 Computer won this round! 💻'
-    computerPlayer.wins++
+//   } else if (computerPlayer.fighter === 'paper' && humanPlayer.fighter === 'rock') {
+//     headerInstructions.innerText = '💻 Computer won this round! 💻'
+//     computerPlayer.wins++
 
-  } else if (computerPlayer.fighter === 'scissors' && humanPlayer.fighter === 'paper') {
-    headerInstructions.innerText = '💻 Computer won this round! 💻'
-    computerPlayer.wins++
+//   } else if (computerPlayer.fighter === 'scissors' && humanPlayer.fighter === 'paper') {
+//     headerInstructions.innerText = '💻 Computer won this round! 💻'
+//     computerPlayer.wins++
 
-  } else {
-    headerInstructions.innerText === '✍️ It\'s a draw! ✍️';
-    }
-  }
+//   } else {
+//     headerInstructions.innerText === '✍️ It\'s a draw! ✍️';
+//     }
+//   }
 }
 
 // switch statement to refactor the multiple conditionals?

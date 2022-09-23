@@ -1,6 +1,9 @@
 // Global variables -------------------------------------
-var fighterId;
-var playerArray = []
+// var fighterId;
+var computerFighter = 'paper';
+var classFighterChoices = ['rock', 'paper', 'scissor'];
+var spicyFighterChoices = ['rock', 'paper', 'scissor', 'ufo', 'cave'];
+var playerArray = [];
 
 //  Query Selectors ---------------------------------------
 var classicGameCard = document.getElementById('card--game-classic');
@@ -46,22 +49,65 @@ ufo.addEventListener('click', function () {
 
 
 // Put these functions on the correct js document and then delete between these lines:
+// function randomFighter() {
+//   // Use Math.floor(Math.random(fighterChoices.length)) etc to randomly select and index position and assign it to the variable computerFighter
+// }
 
-function addPlayers() {
-  var humanPlayer = new Player({ name: 'Human', token: '🧟‍♂️' });
-  var computerPlayer = new Player({ name: 'Computer', token: '💻' })
-  playerArray.push(humanPlayer, computerPlayer);
+function addPlayersToPlayersArray() {
+  var humanPlayer = new Player({ name: 'Human', token: '🧟‍♂️'});
+  var computerPlayer = new Player({ name: 'Computer', token: '💻', fighter: computerFighter})
+  if (playerArray.length === 0) {
+    console.log(playerArray)
+    playerArray.push(humanPlayer, computerPlayer);
+  }
 }
 
-function assignFighters(fighterId) {
+function assignFighterToPlayer() {
   playerArray[0].fighter = fighterId;
+  console.log(fighterId)
+  console.log(playerArray[0].fighter)
 }
 
 function newGame() {
-  addPlayers();
-  assignFighters(fighterId);
+  addPlayersToPlayersArray();
+  assignFighterToPlayer(fighterId);
   console.log(playerArray)
+  determineWinner()
 }
+
+
+function determineWinner() {
+  // this function is a method on the game class.
+  if (playerArray[0].fighter === 'rock' && playerArray[1].fighter === 'scissor') {
+    headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+    playerArray[0].wins++
+
+  } else if (playerArray[0].fighter === 'paper' && playerArray[1].fighter === 'rock') {
+    headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+    playerArray[0].wins++
+
+  } else if (playerArray[0].fighter === 'scissor' && playerArray[1].fighter === 'paper') {
+    headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+    playerArray[0].wins++
+
+  } else if (playerArray[1].fighter === 'rock' && playerArray[0].fighter === 'scissor') {
+    headerInstructions.innerText = '💻 Computer won this round! 💻'
+    playerArray[1].wins++
+
+  } else if (playerArray[1].fighter === 'paper' && playerArray[0].fighter === 'rock') {
+    headerInstructions.innerText = '💻 Computer won this round! 💻'
+    playerArray[1].fighter.wins++
+    console.log(headerInstructions.innerText)
+
+  } else if (playerArray[1].fighter === 'scissors' && playerArray[0].fighter === 'paper') {
+    headerInstructions.innerText = '💻 Computer won this round! 💻'
+    playerArray[1].wins++
+
+  } else if (playerArray[1].fighter === playerArray[0].fighter) {
+    headerInstructions.innerText = '✍️ It\'s a draw! ✍️';
+    console.log('It\s a draw sucka')
+    }
+  }
 
 // Put these functions on the correct js document and then delete between these lines:
 
