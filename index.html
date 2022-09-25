@@ -17,7 +17,7 @@
       <h1>🧟‍♂️</h1>
       <h2>Human</h2>
       <!--The blank in this element may be replaced by interpolating `${computer.wins}` -->
-      <p>Wins: ____</p>
+      <p id="text--human-wins">Wins: 0</p>
       <div class="card--game-selector card--change-game" id="change-game-selector">
         <p>Change game?</p>
       </div>
@@ -34,19 +34,19 @@
         <container class="container--game-cards" id="container--game-cards">
           <section class="card--game-selector" id="card--game-classic">
             <h3>Classic Game</h3>
-            <p>rock > scissors</p>
+            <p>rock > scissor</p>
             <p>paper > rock</p>
-            <p>scissors > paper</p>
+            <p>scissor > paper</p>
           </section>
 
 
           <section class="card--game-selector card--game-spicy" id="card--game-spicy">
             <h3>Spicy Game</h3>
-            <p>rock > scissors</p>
-            <p>rock > scissors</p>
+            <p>rock > scissor</p>
+            <p>rock > scissor</p>
             <p>paper > rock</p>
-            <p>scissors > paper</p>
-            <p>scissors > paper</p>
+            <p>scissor > paper</p>
+            <p>scissor > paper</p>
           </section>
         </container>
 
@@ -72,15 +72,15 @@
       <h1>💻</h1>
       <h2>Computer</h2>
       <!--The blank in this element may be replaced by interpolating `${computer.wins}` -->
-      <p>Wins: ___ </p>
+      <p id="text--computer-wins">Wins: 0</p>
     </section>
 
   </div>
 
-  <!--The  order of these items should match the order in which they're needed instantiated-->
-  <script type="text/javascript" src="main.js"></script>
-  <script type="text/javascript" src="game.js"></script>
+  <!--The  order of these items should match the order in which they're needed instantiated. This should be good according to others' experiences.-->
   <script type="text/javascript" src="player.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
