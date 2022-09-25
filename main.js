@@ -1,6 +1,6 @@
 // Global variables -------------------------------------
 // var fighterId;
-var computerFighter = 'paper';
+var computerFighter = 'rock';
 var classFighterChoices = ['rock', 'paper', 'scissor'];
 var spicyFighterChoices = ['rock', 'paper', 'scissor', 'ufo', 'cave'];
 var playerArray = [];
@@ -19,6 +19,8 @@ var paper = document.getElementById('image--paper');
 var scissor = document.getElementById('image--scissor');
 var cave = document.getElementById('image--cave');
 var ufo = document.getElementById('image--ufo');
+var humanWinScore = document.getElementById('text--human-wins');
+var computerWinScore = document.getElementById('text--computer-wins');
 
 // Event listeners ----------------------------------------
 window.addEventListener('load', showStartScreen);
@@ -47,11 +49,7 @@ ufo.addEventListener('click', function () {
 });
 
 
-
 // Put these functions on the correct js document and then delete between these lines:
-// function randomFighter() {
-//   // Use Math.floor(Math.random(fighterChoices.length)) etc to randomly select and index position and assign it to the variable computerFighter
-// }
 
 function addPlayersToPlayersArray() {
   var humanPlayer = new Player({ name: 'Human', token: '🧟‍♂️'});
@@ -68,13 +66,15 @@ function assignFighterToPlayer() {
   console.log(playerArray[0].fighter)
 }
 
+
+// PLAYER FUNCTIONS ^^^^
+
 function newGame() {
-  addPlayersToPlayersArray();
-  assignFighterToPlayer(fighterId);
+  addPlayersToPlayersArray()
+  assignFighterToPlayer(fighterId)
   console.log(playerArray)
   determineWinner()
 }
-
 
 function determineWinner() {
   // this function is a method on the game class.
@@ -86,6 +86,7 @@ function determineWinner() {
     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
     playerArray[0].wins++
 
+    // this line is updating the wins value in the human player object.
   } else if (playerArray[0].fighter === 'scissor' && playerArray[1].fighter === 'paper') {
     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
     playerArray[0].wins++
@@ -99,7 +100,7 @@ function determineWinner() {
     playerArray[1].fighter.wins++
     console.log(headerInstructions.innerText)
 
-  } else if (playerArray[1].fighter === 'scissors' && playerArray[0].fighter === 'paper') {
+  } else if (playerArray[1].fighter === 'scissor' && playerArray[0].fighter === 'paper') {
     headerInstructions.innerText = '💻 Computer won this round! 💻'
     playerArray[1].wins++
 
@@ -107,6 +108,17 @@ function determineWinner() {
     headerInstructions.innerText = '✍️ It\'s a draw! ✍️';
     console.log('It\s a draw sucka')
     }
+
+    updateScoreBoard()
+  }
+
+  function updateScoreBoard() {
+    var humanWins = playerArray[0].wins;
+    console.log('humanWins: ', humanWins) 
+    humanWinScore.innerText = `Wins: ${humanWins}`;
+    var computerWins = playerArray[1].wins;
+    console.log('computerWins: ', computerWins)
+    computerWinScore.innerText = `Wins: ${computerWins}`;
   }
 
 // Put these functions on the correct js document and then delete between these lines:
@@ -147,4 +159,5 @@ function showStartScreen() {
   hide(spicyFighterArea)
   gamePlayArea.appendChild(gameCardArea)
   hide(changeGameCard)
+  headerInstructions.innerText = 'Choose your game!';
 }

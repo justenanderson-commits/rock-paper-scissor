@@ -69,3 +69,7 @@ function updateWins() {
 // // Player methods must include, but are not limited to:
 // // constructor - properties should include: name (ex: 'Human'), token (ex: '👩🏻'), wins (ex: 0)
 // // takeTurn
+
+// function randomFighter() {
+//   // Use Math.floor(Math.random(fighterChoices.length)) etc to randomly select and index position and assign it to the variable computerFighter
+// }
