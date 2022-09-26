@@ -1,7 +1,7 @@
 class Game {
   constructor(game) {
     this.playerArray = [];
-    this.gameType = 'none selected';
+    this.gameType;
     this.human = humanPlayer;
     this.computer = computerPlayer;
   }
@@ -27,7 +27,6 @@ class Game {
     console.log('Computer fighter: ', computerPlayer)
   }
 
-  
   loadGame() {
     headerInstructions.innerText = 'Choose your fighter!'
     gameCardArea.remove()
