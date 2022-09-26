@@ -5,9 +5,9 @@ var spicyFighterChoices = ['rock', 'paper', 'scissor', 'ufo', 'cave'];
 
 //data model variables
 var playerArray = [];
-var humanPlayer = new Player({ name: 'Human', token: '🧟‍♂️'});
-var computerPlayer = new Player({ name: 'Computer', token: '💻'})
-var newGame = new Game({playerArray: [], human: 'John', computer: 'MacBook'})
+var humanPlayer = new Player({ name: 'Human', token: '🧟‍♂️' });
+var computerPlayer = new Player({ name: 'Computer', token: '💻' })
+var newGame = new Game({ playerArray: [], human: 'John', computer: 'MacBook' })
 
 
 //  Query Selectors ---------------------------------------
@@ -30,36 +30,36 @@ var computerWinScore = document.getElementById('text--computer-wins');
 
 // Event listeners ----------------------------------------
 window.addEventListener('load', showStartScreen);
-classicGameCard.addEventListener('click', loadClassicGame);
-spicyGameCard.addEventListener('click', loadSpicyGame);
 changeGameCard.addEventListener('click', showStartScreen);
+classicGameCard.addEventListener('click', function () {
+  newGame.gameType = 'classic';
+  newGame.loadGame()
+});
+spicyGameCard.addEventListener('click', function () {
+  newGame.gameType = 'spicy';
+  newGame.loadGame()
+});
 rock.addEventListener('click', function () {
   fighterId = 'rock';
- createNewGame();
+  createNewGame();
 });
 paper.addEventListener('click', function () {
   fighterId = 'paper';
- createNewGame();
+  createNewGame();
 });
 scissor.addEventListener('click', function () {
   fighterId = 'scissor';
- createNewGame();
+  createNewGame();
 });
 cave.addEventListener('click', function () {
   fighterId = 'cave';
- createNewGame();
+  createNewGame();
 });
 ufo.addEventListener('click', function () {
   fighterId = 'ufo';
- createNewGame();
+  createNewGame();
 });
 
-function createNewGame() {
-  newGame.stagePlayers()
-  newGame.assignFighters(fighterId)
-  newGame.determineWinner()
-  newGame.updateScoreBoard()
-}
 
 // Functions (Single Responsibility Protocol)--------------
 function show(element) {
@@ -68,23 +68,6 @@ function show(element) {
 
 function hide(element) {
   element.classList.add('hidden')
-
-} function loadClassicGame() {
-  headerInstructions.innerText = 'Choose your fighter!'
-  gameCardArea.remove()
-  show(changeGameCard)
-  gamePlayArea.appendChild(classicFighterArea)
-  show(classicFighterArea)
-  // console.log('Classic game loading...')
-}
-
-function loadSpicyGame() {
-  headerInstructions.innerText = 'Choose your fighter!'
-  gameCardArea.remove()
-  show(changeGameCard)
-  gamePlayArea.appendChild(spicyFighterArea)
-  show(spicyFighterArea)
-  // console.log('Let\'s get spicy!')
 }
 
 function showStartScreen() {
@@ -92,7 +75,21 @@ function showStartScreen() {
   spicyFighterArea.remove()
   hide(classicFighterArea)
   hide(spicyFighterArea)
-  gamePlayArea.appendChild(gameCardArea)
   hide(changeGameCard)
+  gamePlayArea.appendChild(gameCardArea)
   headerInstructions.innerText = 'Choose your game!';
-}
+}  
+
+function createNewGame() {
+  newGame.loadGame()
+  newGame.addPlayers()
+  newGame.assignFighters(fighterId)
+  newGame.determineWinner()
+  newGame.updateScoreBoard()
+}  
+
+
+// Rock, paper, scissor, cave, ufo: 
+// 1. paper, ufo > Cave > stone, scissors fall into the cave and get lost
+//  cave. 
+// 2. Scissor, rock > ufo > cave, paper, but gets stabbed by the scissors, and is crushed by the rock.
