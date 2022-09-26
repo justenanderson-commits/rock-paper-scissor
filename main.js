@@ -22,8 +22,11 @@ var gamePlayArea = document.getElementById('container--game-play-area');
 var rock = document.getElementById('image--rock');
 var paper = document.getElementById('image--paper');
 var scissor = document.getElementById('image--scissor');
-var cave = document.getElementById('image--cave');
-var ufo = document.getElementById('image--ufo');
+var spicyRock = document.getElementById('image--spicy-rock');
+var spicyPaper = document.getElementById('image--spicy-paper');
+var spicyScissor = document.getElementById('image--spicy-scissor');
+var spicyCave = document.getElementById('image--spicy-cave');
+var spicyUfo = document.getElementById('image--spicy-ufo');
 var humanWinScore = document.getElementById('text--human-wins');
 var computerWinScore = document.getElementById('text--computer-wins');
 
@@ -51,11 +54,23 @@ scissor.addEventListener('click', function () {
   fighterId = 'scissor';
   createNewGame();
 });
-cave.addEventListener('click', function () {
+spicyRock.addEventListener('click', function () {
+  fighterId = 'rock';
+  createNewGame();
+});
+spicyPaper.addEventListener('click', function () {
+  fighterId = 'paper';
+  createNewGame();
+});
+spicyScissor.addEventListener('click', function () {
+  fighterId = 'scissor';
+  createNewGame();
+});
+spicyCave.addEventListener('click', function () {
   fighterId = 'cave';
   createNewGame();
 });
-ufo.addEventListener('click', function () {
+spicyUfo.addEventListener('click', function () {
   fighterId = 'ufo';
   createNewGame();
 });
