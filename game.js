@@ -13,8 +13,15 @@ class Game {
   }
 
   assignFighters() {
-    var i = Math.floor(Math.random() * classicFighterChoices.length);
-    computerPlayer.fighter = classicFighterChoices[i];
+    if (this.gameType === 'classic') {
+      var i = Math.floor(Math.random() * classicFighterChoices.length);
+      computerPlayer.fighter = classicFighterChoices[i];
+      console.log('classicFighterChoices.length: ', classicFighterChoices.length)
+    } else {
+      var i = Math.floor(Math.random() * spicyFighterChoices.length);
+      computerPlayer.fighter = spicyFighterChoices[i];
+      console.log('spicyFighterChoices.length: ', spicyFighterChoices.length)
+    }
     humanPlayer.fighter = fighterId;
     console.log('Human fighter: ', humanPlayer)
     console.log('Computer fighter: ', computerPlayer)
@@ -36,43 +43,56 @@ class Game {
   
   determineWinner() {
     // this function is a method on the game class.
-    if (humanPlayer.fighter === 'rock' && computerPlayer.fighter === 'scissor') {
+    if (humanPlayer.fighter === 'rock' && (computerPlayer.fighter === 'scissor' || computerPlayer.fighter === 'ufo')) {
       headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-      playerArray[0].wins++
+      humanPlayer.wins++
       
-    } else if (humanPlayer.fighter === 'paper' && computerPlayer.fighter === 'rock') {
+    } else if (humanPlayer.fighter === 'paper' && (computerPlayer.fighter === 'rock' || computerPlayer === 'cave')) {
       headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-      playerArray[0].wins++
-      
-      // this line is updating the wins value in the human player object.
-    } else if (humanPlayer.fighter === 'scissor' && computerPlayer.fighter === 'paper') {
+      humanPlayer.wins++
+
+    } else if (humanPlayer.fighter === 'scissor' && (computerPlayer.fighter === 'paper' || computerPlayer.fighter === 'ufo')) {
       headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-      playerArray[0].wins++
-      
-    } else if (computerPlayer.fighter === 'rock' && humanPlayer.fighter === 'scissor') {
+      humanPlayer.wins++
+
+    } else if (humanPlayer.fighter === 'cave' && (computerPlayer.fighter === 'rock' || computerPlayer.fighter === 'scissor')) {
+      headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+      humanPlayer.wins++
+
+    } else if (humanPlayer.fighter === 'ufo' && (computerPlayer.fighter === 'paper' || computerPlayer.fighter === 'cave')) {
+      headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+      humanPlayer.wins++
+
+    } else if (computerPlayer.fighter === 'rock' && (humanPlayer.fighter === 'ufo' || humanPlayer.fighter === 'scissor')) {
       headerInstructions.innerText = '💻 Computer won this round! 💻'
-      playerArray[1].wins++
+      computerPlayer.wins++
       
-    } else if (computerPlayer.fighter === 'paper' && humanPlayer.fighter === 'rock') {
+    } else if (computerPlayer.fighter === 'paper' && (humanPlayer.fighter === 'rock' || humanPlayer === 'cave')) {
       headerInstructions.innerText = '💻 Computer won this round! 💻'
-      playerArray[1].wins++
-      // console.log(headerInstructions.innerText)
+      computerPlayer.wins++
       
-    } else if (computerPlayer.fighter === 'scissor' && humanPlayer.fighter === 'paper') {
+    } else if (computerPlayer.fighter === 'scissor' && (humanPlayer.fighter === 'paper' || humanPlayer.fighter === 'ufo')) {
       headerInstructions.innerText = '💻 Computer won this round! 💻'
-      playerArray[1].wins++
+      computerPlayer.wins++
+
+    } else if (computerPlayer.fighter === 'cave' && (humanPlayer.fighter === 'rock' || humanPlayer === 'scissor')) {
+      headerInstructions.innerText = '💻 Computer won this round! 💻'
+      computerPlayer.wins++
       
-    } else if (computerPlayer.fighter === humanPlayer.fighter) {
+    } else if (computerPlayer.fighter === 'ufo' && (humanPlayer.fighter === 'paper' || humanPlayer.fighter === 'cave')) {
+      headerInstructions.innerText = '💻 Computer won this round! 💻'
+      computerPlayer.wins++
+    
+    } else {
       headerInstructions.innerText = '✍️ It\'s a draw! ✍️';
-      // console.log('It\s a draw sucka')
     }
   }
   
   updateScoreBoard() {
-    var humanWins = playerArray[0].wins;
+    var humanWins = humanPlayer.wins;
     console.log('humanWins: ', humanWins)
     humanWinScore.innerText = `Wins: ${humanWins}`;
-    var computerWins = playerArray[1].wins;
+    var computerWins = computerPlayer.wins;
     console.log('computerWins: ', computerWins)
     computerWinScore.innerText = `Wins: ${computerWins}`;
   }
@@ -86,7 +106,7 @@ class Game {
     // // A way to reset the Game’s board to begin a new game
     // Change the headerInstructions.innerText = "Choose your fighter!" again.
     // Add a "Reset Game" button that shows up when the game is being played. Then add a querySelector, then add an eventListener, then add the function for it.
-  }
+    }
 }
 
 // // Game should include:
