@@ -1,45 +1,72 @@
 class Game {
-  constructor() {
-
+  constructor(game) {
+    this.playerArray = [];
+    // this.gameType = userSelectedGame;
+    this.human = humanPlayer;
+    this.computer = computerPlayer;
+  }
+  
+  stagePlayers() {
+    if (playerArray.length === 0) {
+      playerArray.push(humanPlayer, computerPlayer);
+    }
   }
 
-  stageFighters() {
-    var humanPlayer = new Player({ name: 'Human', token: '🧟‍♂️' });
-    var computerPlayer = new Player({ name: 'Computer', token: '💻' })
-    playerArray.push(humanPlayer, computerPlayer);
+  assignFighters() {
+    var i = Math.floor(Math.random() * classicFighterChoices.length);
+    computerPlayer.fighter = classicFighterChoices[i];
+    humanPlayer.fighter = fighterId;
+    console.log('Human fighter: ', humanPlayer)
+    console.log('Computer fighter: ', computerPlayer)
   }
 
-  // Classic Game Rules:
-  // Refactor these. I probably only need 4 rules to meet all possible conditions.
-  // determineWinner() {
-  //   if (humanPlayer.fighter === 'rock' && computerPlayer.fighter === 'scissor') {
-  //     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-  //     humanPlayer.wins++
+  resetGame() {
+    humanPlayer.wins = 0;
+    computerPlayer.wins = 0;
+  }
 
-  //   } else if (humanPlayer.fighter === 'paper' && computerPlayer.fighter === 'rock') {
-  //     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-  //     humanPlayer.wins++
-
-  //   } else if (humanPlayer.fighter === 'scissors' && computerPlayer.fighter === 'paper') {
-  //     headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
-  //     humanPlayer.wins++
-
-  //   } else if (computerPlayer.fighter === 'rock' && humanPlayer.fighter === 'scissor') {
-  //     headerInstructions.innerText = '💻 Computer won this round! 💻'
-  //     computerPlayer.wins++
-
-  //   } else if (computerPlayer.fighter === 'paper' && humanPlayer.fighter === 'rock') {
-  //     headerInstructions.innerText = '💻 Computer won this round! 💻'
-  //     computerPlayer.wins++
-
-  //   } else if (computerPlayer.fighter === 'scissors' && humanPlayer.fighter === 'paper') {
-  //     headerInstructions.innerText = '💻 Computer won this round! 💻'
-  //     computerPlayer.wins++
-
-  //   } else {
-  //     headerInstructions.innerText === '✍️ It\'s a draw! ✍️';
-  //   }
-  // }
+  determineWinner() {
+    // this function is a method on the game class.
+    if (humanPlayer.fighter === 'rock' && computerPlayer.fighter === 'scissor') {
+      headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+      playerArray[0].wins++
+  
+    } else if (humanPlayer.fighter === 'paper' && computerPlayer.fighter === 'rock') {
+      headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+      playerArray[0].wins++
+  
+      // this line is updating the wins value in the human player object.
+    } else if (humanPlayer.fighter === 'scissor' && computerPlayer.fighter === 'paper') {
+      headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️'
+      playerArray[0].wins++
+  
+    } else if (computerPlayer.fighter === 'rock' && humanPlayer.fighter === 'scissor') {
+      headerInstructions.innerText = '💻 Computer won this round! 💻'
+      playerArray[1].wins++
+  
+    } else if (computerPlayer.fighter === 'paper' && humanPlayer.fighter === 'rock') {
+      headerInstructions.innerText = '💻 Computer won this round! 💻'
+      playerArray[1].wins++
+      // console.log(headerInstructions.innerText)
+  
+    } else if (computerPlayer.fighter === 'scissor' && humanPlayer.fighter === 'paper') {
+      headerInstructions.innerText = '💻 Computer won this round! 💻'
+      playerArray[1].wins++
+  
+    } else if (computerPlayer.fighter === humanPlayer.fighter) {
+      headerInstructions.innerText = '✍️ It\'s a draw! ✍️';
+      // console.log('It\s a draw sucka')
+      }
+    }
+  
+    updateScoreBoard() {
+      var humanWins = playerArray[0].wins;
+      console.log('humanWins: ', humanWins) 
+      humanWinScore.innerText = `Wins: ${humanWins}`;
+      var computerWins = playerArray[1].wins;
+      console.log('computerWins: ', computerWins)
+      computerWinScore.innerText = `Wins: ${computerWins}`;
+    }
 }
 
 // // Game should include:
