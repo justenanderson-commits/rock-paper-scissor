@@ -1,6 +1,4 @@
 # Bugs
-- Only the new fighters work on the spicy version. (Duplicate ID issue?).
-
 
 ## Rock Paper Scissor Solo Project
 
