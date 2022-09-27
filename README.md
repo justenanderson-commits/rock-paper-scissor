@@ -14,7 +14,9 @@ This is a rock, paper, scissor game that will offer players the ability to compe
 9. Manipulate the application in the browser window
 
 ## Preview of App:
-
+<img width="1347" alt="Screen Shot 2022-09-27 at 2 13 20 PM" src="https://user-images.githubusercontent.com/104015966/192626606-30f9bb33-1d8b-4234-b2b7-653ff64847d5.png">
+<img width="1347" alt="Screen Shot 2022-09-27 at 2 13 31 PM" src="https://user-images.githubusercontent.com/104015966/192626612-3e3af6fe-3e86-48be-b2c5-9b1f473332d2.png">
+<img width="1347" alt="Screen Shot 2022-09-27 at 2 13 42 PM" src="https://user-images.githubusercontent.com/104015966/192626616-1a775a92-a3dd-4eb5-b54e-f327f2448aa0.png">
 
 ## Context:
 Working indidependently in the 5th and 6th weeks of Mod1 classes at Turing, I invested at least 25 - 30 hours to create this application's functionality from scratch using HTML, CSS, and Javascript.
