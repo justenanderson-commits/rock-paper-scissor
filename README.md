@@ -1,5 +1,5 @@
-#### Rock Paper Scissor Solo Project
-### Abstract:
+# Rock Paper Scissor Solo Project
+## Abstract:
 This is a rock, paper, scissor game that will offer players the ability to compete against the computer by clicking on a rock, paper, or scissor icon (cave and ufo fighters are added to the spicy version). Player objects are instantiated by the Game class, then fighters are assigned to the DOM. When the user clicks a fighter, the computer's fighter is randomly generated, and then the DOM is updated with each player's selection. Fighters are then compared and the winner is determined. Wins are tabulated in each player's column of the game board.
 
 ## Installation Instructions:
