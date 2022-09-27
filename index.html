@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <link href="styles.css" type="text/css" rel="stylesheet">
@@ -8,29 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RPS Final Solo Project</title>
 </head>
-
 <body>
   <div class="container--whole-page">
-
-
     <section class="column container--outer-column">
       <h1>🧟‍♂️</h1>
       <h2>Human</h2>
-      <!--The blank in this element may be replaced by interpolating `${computer.wins}` -->
       <p id="text--human-wins">Wins: 0</p>
       <div class="card--game-selector card--change-game" id="change-game-selector">
         <p>Change game?</p>
       </div>
     </section>
-
-
     <section class="column container--center-column">
       <h1>Rock Paper Scissor</h1>
       <h2 id="text--instructions">Choose your game!</h2>
       <div class="container--game-play-area" id="container--game-play-area">
-
-
-        <!-- game cards container -->
         <container class="container--game-cards" id="container--game-cards">
           <section class="card--game-selector" id="card--game-classic">
             <h3>Classic Game</h3>
@@ -38,8 +28,6 @@
             <p>paper > rock</p>
             <p>scissor > paper</p>
           </section>
-
-
           <section class="card--game-selector card--game-spicy" id="card--game-spicy">
             <h3>Spicy Game</h3>
             <p>rock > scissor & ufo</p>
@@ -49,15 +37,11 @@
             <p>ufo > paper & cave</p>
           </section>
         </container>
-
-        <!-- classic fighter images container -->
         <container class="container--fighter-images" id="container--classic-fighter-area">
           <img id="image--rock" src="assets/rock.png" alt="Rock clip art">
           <img id="image--paper" src="assets/lines-paper.png" alt="Lined paper clip art">
           <img id="image--scissor" src="assets/lines-scissors.png" alt="Scissor clip art">
         </container>
-
-        <!-- spicy fighter images container -->
         <container class="container--fighter-images" id="container--spicy-fighter-area">
           <img id="image--spicy-rock" src="assets/rock.png" alt="Rock clip art">
           <img id="image--spicy-paper" src="assets/lines-paper.png" alt="Lined paper clip art">
@@ -66,21 +50,18 @@
           <img id="image--spicy-ufo" src="assets/ufo.png" alt="UFO clip art">
         </container>
       </div>
-
     </section>
     <section class="column container--outer-column">
       <h1>💻</h1>
       <h2>Computer</h2>
-      <!--The blank in this element may be replaced by interpolating `${computer.wins}` -->
       <p id="text--computer-wins">Wins: 0</p>
+      <div class="card--reset-game card--reset-game" id="reset-game-selector">
+        <p>Reset Scores?</p>
+      </div>
     </section>
-
   </div>
-
-  <!--The  order of these items should match the order in which they're needed instantiated. This should be good according to others' experiences.-->
   <script type="text/javascript" src="player.js"></script>
   <script type="text/javascript" src="game.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>
-
 </html>

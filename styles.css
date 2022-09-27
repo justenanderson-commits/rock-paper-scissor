@@ -1,4 +1,11 @@
-/* body styling */
+.column {
+  align-items: center;
+  border: .25em solid black;
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+}
+
 .container--whole-page {
   color: #F1FAEE;
   display: flex;
@@ -6,14 +13,6 @@
   flex-direction: row;
   white-space: nowrap;
   width: 98vw;
-}
-
-.column {
-  align-items: center;
-  border: .25em solid black;
-  display: flex;
-  flex-direction: column;
-  height: 98vh;
 }
 
 .container--outer-column {
@@ -42,7 +41,7 @@
   flex-wrap: wrap;
 }
 
-.card--game-selector {
+.card--game-selector, .card--reset-game {
   background-color: #94b6c3;
   border-bottom: 2em #457B9D solid;
   color: #F1FAEE;
@@ -58,12 +57,12 @@
   height: 28vh
 }
 
-.card--game-selector:hover {
+.card--game-selector:hover, .card--reset-game:hover {
   background-color: #092c54;
   cursor: pointer;
 }
 
-.card--change-game {
+.card--change-game, .card--reset-game {
   margin-top: 30%;
   border: 0px;
   width: 13vw;
