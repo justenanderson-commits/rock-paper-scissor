@@ -6,8 +6,8 @@ var spicyFighterChoices = ['rock', 'paper', 'scissor', 'ufo', 'cave'];
 //data model variables
 var playerArray = [];
 var humanPlayer = new Player({ name: 'Human', token: '🧟‍♂️' });
-var computerPlayer = new Player({ name: 'Computer', token: '💻' })
-var newGame = new Game({ playerArray: [], human: 'John', computer: 'MacBook' })
+var computerPlayer = new Player({ name: 'Computer', token: '💻' });
+var newGame = new Game({ playerArray: [], human: 'John', computer: 'MacBook' });
 
 
 //  Query Selectors ---------------------------------------
@@ -114,6 +114,6 @@ function createNewGame() {
 
 function playGame() {
   newGame.determineWinner()
-  newGame.updateScoreBoard()
   newGame.timeout()
+  newGame.updateScoreBoard()
 }  
