@@ -39,7 +39,7 @@ class Game {
 
   determineWinner() {
     if (humanPlayer.fighter === 'rock' && (computerPlayer.fighter === 'scissor' || computerPlayer.fighter === 'ufo')) {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter} 💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
@@ -47,7 +47,7 @@ class Game {
       }, "2000")
 
     } else if (humanPlayer.fighter === 'paper' && (computerPlayer.fighter === 'rock' || computerPlayer === 'cave')) {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
@@ -55,7 +55,7 @@ class Game {
       }, "2000")
 
     } else if (humanPlayer.fighter === 'scissor' && (computerPlayer.fighter === 'paper' || computerPlayer.fighter === 'ufo')) {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
@@ -63,7 +63,7 @@ class Game {
       }, "2000")
 
     } else if (humanPlayer.fighter === 'cave' && (computerPlayer.fighter === 'rock' || computerPlayer.fighter === 'scissor')) {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
@@ -71,7 +71,7 @@ class Game {
       }, "2000")
 
     } else if (humanPlayer.fighter === 'ufo' && (computerPlayer.fighter === 'paper' || computerPlayer.fighter === 'cave')) {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
@@ -79,7 +79,7 @@ class Game {
       }, "2000")
 
     } else if (computerPlayer.fighter === 'rock' && (humanPlayer.fighter === 'ufo' || humanPlayer.fighter === 'scissor')) {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '💻 Computer won this round! 💻';
@@ -87,7 +87,7 @@ class Game {
       }, "2000")
 
     } else if (computerPlayer.fighter === 'paper' && (humanPlayer.fighter === 'rock' || humanPlayer === 'cave')) {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '💻 Computer won this round! 💻';
@@ -95,7 +95,7 @@ class Game {
       }, "2000")
 
     } else if (computerPlayer.fighter === 'scissor' && (humanPlayer.fighter === 'paper' || humanPlayer.fighter === 'ufo')) {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '💻 Computer won this round! 💻';
@@ -103,7 +103,7 @@ class Game {
       }, "2000")
 
     } else if (computerPlayer.fighter === 'cave' && (humanPlayer.fighter === 'rock' || humanPlayer === 'scissor')) {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '💻 Computer won this round! 💻';
@@ -111,7 +111,7 @@ class Game {
       }, "2000")
 
     } else if (computerPlayer.fighter === 'ufo' && (humanPlayer.fighter === 'paper' || humanPlayer.fighter === 'cave')) {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '💻 Computer won this round! 💻';
@@ -119,7 +119,7 @@ class Game {
       }, "2000")
 
     } else {
-      headerInstructions.innerText = `Computer chose ${computerPlayer.fighter}`;
+      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
 
       setTimeout(() => {
         headerInstructions.innerText = '✍️ It\'s a draw! ✍️';

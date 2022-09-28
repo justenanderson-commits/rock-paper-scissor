@@ -1,6 +1,6 @@
 // Global variables -------------------------------------
 var classicFighterChoices = ['rock', 'paper', 'scissor'];
-var spicyFighterChoices = ['rock', 'paper', 'scissor', 'ufo', 'cave'];
+var spicyFighterChoices = ['rock', 'paper', 'scissor', 'ufo', 'cave'];  
 
 
 //data model variables
