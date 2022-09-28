@@ -43,7 +43,7 @@ Working indidependently in the 5th and 6th weeks of Mod1 classes at Turing, I in
 - I learned soooo much and feel pretty good about my ability to create a website completely from scratch on my with only help from Google and a few (very limited) conversations with other people (classmates and other network contacts).
 - It was generally a fun experience to create all of this. 
 - I found one little sweet piece of ES6 syntax that allowed me to make my timer work. I struggled with that thing for a loooong time!
-- I think the code is very readable and kinda pretty. :)
+- I think the code is very readable and kinda pretty. :)  
 
 ## Challenges:
 - I let myself take some family time this weekend but, again, it wasn't the most restful (unfortunately). As a result, I left too many tasks for Monday and Tuesday. Then after hitting a snag and toiling on it for hours, burn out set in and I just kinda settled for what I got.
