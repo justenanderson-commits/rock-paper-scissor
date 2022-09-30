@@ -77,6 +77,9 @@ h1 {
 }
 
 h2 {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
   font-size: 5vh;
   margin: 3% auto 5%
 }
@@ -93,6 +96,10 @@ img {
   align-items:center;
   max-width: 25%;
   cursor: pointer;
+}
+
+img:hover {
+transform: scale(1.1);
 }
 
 p {
