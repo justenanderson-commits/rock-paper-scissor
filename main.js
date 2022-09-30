@@ -1,13 +1,53 @@
+//Logic idea to refactor event handlers:
+//  if (rock.beats === computerPlayer.fighter) {
+  //   // humanPlayer.fighter.beats === computerPlayer.fighter
+  // }
+
 // Global variables -------------------------------------
-var classicFighterChoices = ['rock', 'paper', 'scissor'];
-var spicyFighterChoices = ['rock', 'paper', 'scissor', 'ufo', 'cave'];  
+var rock = {
+    name: 'rock',
+    img: '<img id="image--rock" src="assets/rock.png" alt="Rock clip art">',
+    beats: 'scissor',
+    losesTo: 'paper'
+  }
+
+  var paper = {
+    name: 'paper',
+    img: '<img id="image--paper" src="assets/lines-paper.png" alt="Lined paper clip art">',
+    beats: 'rock',
+    losesTo: 'scissor'
+  }
+
+  var scissor = {
+    name: 'scissor',
+    img: '<img id="image--scissor" src="assets/lines-scissors.png" alt="Scissor clip art">',
+    beats: 'paper',
+    losesTo: 'rock'
+  }
+    
+  var spicyCave = {
+    name: 'cave',
+    img: '<img id="image--spicy-cave" src="assets/cave.png" alt="Cave clip art">',
+    beats: 'add opponent here',
+    losesTo: 'rock'
+  }
+  
+  var spicyUfoObject = {
+    name: 'ufo',
+    img: '<img id="image--spicy-ufo" src="assets/ufo.png" alt="Ufo clip art">',
+    beats: 'cave',
+    losesTo: 'rock'
+  }
+  
+var classicFighterChoices = [rock, paper, scissor]; 
+var spicyFighterChoices = [rock, paper, scissor, spicyCave, spicyUfoObject]; 
 
 
 //data model variables
-var playerArray = [];
+var players = [];
 var humanPlayer = new Player({ name: 'Human', token: '🧟‍♂️' });
 var computerPlayer = new Player({ name: 'Computer', token: '💻' });
-var newGame = new Game({ playerArray: [], human: 'John', computer: 'MacBook' });
+var newGame = new Game({ players: [], human: 'John', computer: 'MacBook' });
 
 
 //  Query Selectors ---------------------------------------
@@ -16,26 +56,29 @@ var spicyGameCard = document.getElementById('card--game-spicy');
 var changeGameCard = document.getElementById('change-game-selector');
 var resetScoreCard = document.getElementById('reset-game-selector');
 var headerInstructions = document.getElementById('text--instructions');
+var humanWinScore = document.getElementById('text--human-wins');
+var computerWinScore = document.getElementById('text--computer-wins');
 var classicFighterArea = document.getElementById('container--classic-fighter-area');
 var spicyFighterArea = document.getElementById('container--spicy-fighter-area');
 var gameCardArea = document.getElementById('container--game-cards');
 var gamePlayArea = document.getElementById('container--game-play-area');
-var rock = document.getElementById('image--rock');
-var paper = document.getElementById('image--paper');
-var scissor = document.getElementById('image--scissor');
-var spicyRock = document.getElementById('image--spicy-rock');
-var spicyPaper = document.getElementById('image--spicy-paper');
-var spicyScissor = document.getElementById('image--spicy-scissor');
-var spicyCave = document.getElementById('image--spicy-cave');
-var spicyUfo = document.getElementById('image--spicy-ufo');
-var humanWinScore = document.getElementById('text--human-wins');
-var computerWinScore = document.getElementById('text--computer-wins');
+
+var images = gamePlayArea.getElementsByTagName('img');
+var rockImg = images[0];
+var paperImg = images[1];
+var scissorImg = images[2];
+var spicyRockImg = images[3];
+var spicyPaperImg = images[4];
+var spicyScissorImg = images[5];
+var spicyCaveImg = images[6];
+var spicyUfoImg = images[7];
 
 
 // Event listeners ----------------------------------------
 window.addEventListener('load', showStartScreen);
 changeGameCard.addEventListener('click', showStartScreen);
 resetScoreCard.addEventListener('click', newGame.resetGame);
+
 classicGameCard.addEventListener('click', function () {
   newGame.gameType = 'classic';
   newGame.loadGame();
@@ -44,43 +87,47 @@ spicyGameCard.addEventListener('click', function () {
   newGame.gameType = 'spicy';
   newGame.loadGame();
 });
-rock.addEventListener('click', function () {
-  fighterId = 'rock';
+
+
+rockImg.addEventListener('click', function () {
+  // Add a for (or forEach) loop here {
+  fighterId = rock;
+  createNewGame();
+  playGame()
+  // }
+});
+paperImg.addEventListener('click', function () {
+  fighterId = paper;
   createNewGame();
   playGame()
 });
-paper.addEventListener('click', function () {
-  fighterId = 'paper';
+scissorImg.addEventListener('click', function () {
+  fighterId = scissor;
   createNewGame();
   playGame()
 });
-scissor.addEventListener('click', function () {
-  fighterId = 'scissor';
+spicyRockImg.addEventListener('click', function () {
+  fighterId = rock;
   createNewGame();
   playGame()
 });
-spicyRock.addEventListener('click', function () {
-  fighterId = 'rock';
+spicyPaperImg.addEventListener('click', function () {
+  fighterId = paper;
   createNewGame();
   playGame()
 });
-spicyPaper.addEventListener('click', function () {
-  fighterId = 'paper';
+spicyScissorImg.addEventListener('click', function () {
+  fighterId = scissor;
   createNewGame();
   playGame()
 });
-spicyScissor.addEventListener('click', function () {
-  fighterId = 'scissor';
+spicyCaveImg.addEventListener('click', function () {
+  fighterId = spicyCave;
   createNewGame();
   playGame()
 });
-spicyCave.addEventListener('click', function () {
-  fighterId = 'cave';
-  createNewGame();
-  playGame()
-});
-spicyUfo.addEventListener('click', function () {
-  fighterId = 'ufo';
+spicyUfoImg.addEventListener('click', function () {
+  fighterId = spicyUfoObject;
   createNewGame();
   playGame()
 });

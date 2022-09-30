@@ -1,14 +1,16 @@
 class Game {
   constructor(game) {
-    this.playerArray = [];
+    this.players = [];
     this.gameType;
     this.human = humanPlayer;
+    // Replace these variables with new instatiations of the player class
     this.computer = computerPlayer;
+    // Replace these variables with new instatiations of the player class
   }
 
   addPlayers() {
-    if (playerArray.length === 0) {
-      playerArray.push(humanPlayer, computerPlayer);
+    if (players.length === 0) {
+      players.push(humanPlayer, computerPlayer);
     }
   }
 
@@ -20,7 +22,6 @@ class Game {
       var i = Math.floor(Math.random() * spicyFighterChoices.length);
       computerPlayer.fighter = spicyFighterChoices[i];
     }
-    humanPlayer.fighter = fighterId;
   }
 
   loadGame() {
@@ -38,94 +39,60 @@ class Game {
   }
 
   determineWinner() {
-    if (humanPlayer.fighter === 'rock' && (computerPlayer.fighter === 'scissor' || computerPlayer.fighter === 'ufo')) {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter} 💻 = ${computerPlayer.fighter}`;
+    var humanFighter = fighterId.name;
+    var compFighter = computerPlayer.fighter.name;
 
-      setTimeout(() => {
-        headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
-        humanPlayer.wins++;
-      }, "2000")
+    if (humanFighter === 'rock' && (compFighter === 'scissor' || compFighter === 'ufo')) {
+      newGame.displayFighters()
+      newGame.humanWinner()
 
-    } else if (humanPlayer.fighter === 'paper' && (computerPlayer.fighter === 'rock' || computerPlayer === 'cave')) {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
+    } else if (humanFighter === 'paper' && (compFighter === 'rock' || computerPlayer === 'cave')) {
+      newGame.displayFighters()
+      newGame.humanWinner()
 
-      setTimeout(() => {
-        headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
-        humanPlayer.wins++;
-      }, "2000")
+    } else if (humanFighter === 'scissor' && (compFighter === 'paper' || compFighter === 'ufo')) {
+      newGame.displayFighters()
+      newGame.humanWinner()
 
-    } else if (humanPlayer.fighter === 'scissor' && (computerPlayer.fighter === 'paper' || computerPlayer.fighter === 'ufo')) {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
+    } else if (humanFighter === 'cave' && (compFighter === 'rock' || compFighter === 'scissor')) {
+      newGame.displayFighters()
+      newGame.humanWinner()
 
-      setTimeout(() => {
-        headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
-        humanPlayer.wins++;
-      }, "2000")
+    } else if (humanFighter === 'ufo' && (compFighter === 'paper' || compFighter === 'cave')) {
+      newGame.displayFighters()
+      newGame.humanWinner()
 
-    } else if (humanPlayer.fighter === 'cave' && (computerPlayer.fighter === 'rock' || computerPlayer.fighter === 'scissor')) {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
+    } else if (compFighter === 'rock' && (humanFighter === 'ufo' || humanFighter === 'scissor')) {
+      newGame.displayFighters()
+      newGame.computerWinner()
 
-      setTimeout(() => {
-        headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
-        humanPlayer.wins++;
-      }, "2000")
+    } else if (compFighter === 'paper' && (humanFighter === 'rock' || humanFighter === 'cave')) {
+      newGame.displayFighters()
+      newGame.computerWinner()
 
-    } else if (humanPlayer.fighter === 'ufo' && (computerPlayer.fighter === 'paper' || computerPlayer.fighter === 'cave')) {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
+    } else if (compFighter === 'scissor' && (humanFighter === 'paper' || humanFighter === 'ufo')) {
+      newGame.displayFighters()
+      newGame.computerWinner()
 
-      setTimeout(() => {
-        headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
-        humanPlayer.wins++;
-      }, "2000")
+    } else if (compFighter === 'cave' && (humanFighter === 'rock' || humanFighter === 'scissor')) {
+      newGame.displayFighters()
+      newGame.computerWinner()
 
-    } else if (computerPlayer.fighter === 'rock' && (humanPlayer.fighter === 'ufo' || humanPlayer.fighter === 'scissor')) {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
-
-      setTimeout(() => {
-        headerInstructions.innerText = '💻 Computer won this round! 💻';
-        computerPlayer.wins++;
-      }, "2000")
-
-    } else if (computerPlayer.fighter === 'paper' && (humanPlayer.fighter === 'rock' || humanPlayer === 'cave')) {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
-
-      setTimeout(() => {
-        headerInstructions.innerText = '💻 Computer won this round! 💻';
-        computerPlayer.wins++;
-      }, "2000")
-
-    } else if (computerPlayer.fighter === 'scissor' && (humanPlayer.fighter === 'paper' || humanPlayer.fighter === 'ufo')) {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
-
-      setTimeout(() => {
-        headerInstructions.innerText = '💻 Computer won this round! 💻';
-        computerPlayer.wins++;
-      }, "2000")
-
-    } else if (computerPlayer.fighter === 'cave' && (humanPlayer.fighter === 'rock' || humanPlayer === 'scissor')) {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
-
-      setTimeout(() => {
-        headerInstructions.innerText = '💻 Computer won this round! 💻';
-        computerPlayer.wins++;
-      }, "2000")
-
-    } else if (computerPlayer.fighter === 'ufo' && (humanPlayer.fighter === 'paper' || humanPlayer.fighter === 'cave')) {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
-
-      setTimeout(() => {
-        headerInstructions.innerText = '💻 Computer won this round! 💻';
-        computerPlayer.wins++;
-      }, "2000")
+    } else if (compFighter === 'ufo' && (humanFighter === 'paper' || humanFighter === 'cave')) {
+      newGame.displayFighters()
+      newGame.computerWinner()
 
     } else {
-      headerInstructions.innerText = `🧟‍♂️ = ${humanPlayer.fighter}  💻 = ${computerPlayer.fighter}`;
-
+      newGame.displayFighters()
       setTimeout(() => {
         headerInstructions.innerText = '✍️ It\'s a draw! ✍️';
-        computerPlayer.wins++;
       }, "2000")
     }
+  }
+
+  displayFighters() {
+      headerInstructions.innerHTML = `${fighterId.img} ${computerPlayer.fighter.img}`;
+      hide(gamePlayArea)
   }
 
   updateScoreBoard() {
@@ -136,18 +103,32 @@ class Game {
       computerWinScore.innerText = `Wins: ${computerWins}`;
     }, "3500")
   }
-
+  
+  timeout() {
+    setTimeout(() => {
+      show(gamePlayArea)
+      headerInstructions.innerText = 'Choose your fighter!';
+    }, "4000")
+  }
+  
+  computerWinner() {
+    setTimeout(() => {
+      headerInstructions.innerText = '💻 Computer won this round! 💻';
+      computerPlayer.wins++;
+    }, "2000")
+  }
+  
+  humanWinner() {
+    setTimeout(() => {
+      headerInstructions.innerText = '🧟‍♂️ Human won this round! 🧟‍♂️';
+      humanPlayer.wins++;
+    }, "2000")
+  }
+  
   resetGame() {
     humanPlayer.wins = 0;
     humanWinScore.innerText = `Wins: ${humanPlayer.wins}`;
     computerPlayer.wins = 0;
     computerWinScore.innerText = `Wins: ${computerPlayer.wins}`;
-  }
-
-  timeout() {
-    setTimeout(() => {
-      show(classicFighterArea)
-      headerInstructions.innerText = 'Choose your fighter!';
-    }, "4000")
   }
 }
