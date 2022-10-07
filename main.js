@@ -1,14 +1,15 @@
 //Logic idea to refactor event handlers:
 //  if (rock.beats === computerPlayer.fighter) {
   //   // humanPlayer.fighter.beats === computerPlayer.fighter
-  // }
+  // } or something like that! :)
 
 // Global variables -------------------------------------
 var rock = {
     name: 'rock',
     img: '<img id="image--rock" src="assets/rock.png" alt="Rock clip art">',
-    beats: 'scissor',
-    losesTo: 'paper'
+    beats: ['scissor', 'ufo'],
+    // These arrays could be refereced to refactor the newGame.determineWinner method //
+    losesTo: ['paper', 'cave']
   }
 
   var paper = {
@@ -134,13 +135,8 @@ spicyUfoImg.addEventListener('click', function () {
 
 
 // Functions-------------------------------------------
-function show(element) {
-  element.classList.remove('hidden');
-}
-
-function hide(element) {
-  element.classList.add('hidden')
-}
+const show = (element => element.classList.remove('hidden'))
+const hide = (element =>  element.classList.add('hidden'))
 
 function showStartScreen() {
   classicFighterArea.remove()
